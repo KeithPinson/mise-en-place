@@ -1,4 +1,6 @@
-# <center>Mise-en-place</br><i>aka,</i> My Moving Target</center>
+<center><img src="https://raw.githubusercontent.com/KeithPinson/mise-en-place/master/src/tile-wide.png"/></center>
+
+# <center>Mise-en-place</center>
 
 <p>
 <i>A boilerplate for front-end web apps.</i>
