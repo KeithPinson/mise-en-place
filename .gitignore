@@ -1,6 +1,11 @@
 archive
 node_modules
 dist
-node_modules
 test/coverage
 test/dist
+
+# IntelliJ IDEA specific
+.idea/
+*.ipr
+*.iws
+
