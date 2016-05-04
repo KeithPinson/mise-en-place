@@ -10,12 +10,12 @@ Web apps are a moving target. The state-of-art for building a Web app
 from scratch is ever shifting. It's not that HTML, javascript, and CSS
 are changing with much swiftness, but the tools used with them; the
 frameworks, builders, and libraries; are constantly on the move and any
-it seems any effort to stay current is as big a task as building the 
+effort it seems to stay current is as big a task as building the 
 app itself.
 
 In an effort to bring some sanity back to my infrequent forays into
 *from-scratch* Web apps, this project,
-Mise-en-place&nbsp;<small>[Mizo&hyphen;n&bullet;plus]</small>,
+Mise-en-place (which means get everything in place before we start cooking),
 serves as my moving target.
 It moves at its own pace&mdash;slower than the rest&mdash;but catching
 up to the state-of-art when it can. This is a &quot;*clone and never 
