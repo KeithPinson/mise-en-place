@@ -1,0 +1,18 @@
+/**
+ * CSS Variables
+ *
+ * Variables are global and have to be declared
+ * in :root with double-dash prefixes (--)
+ *
+ */
+:root {
+
+  --font--sans-serif: sans-serif;
+  --font--serif: Georgia, 'Times New Roman' serif;
+
+  --hr-color: #ccc;
+
+  --selection-color: #b3d4fc;
+
+  --font-color: #222;
+}
