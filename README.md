@@ -1,6 +1,6 @@
-<center><img src="https://raw.githubusercontent.com/KeithPinson/mise-en-place/master/src/tile-wide.png"/></center>
+![](https://raw.githubusercontent.com/KeithPinson/mise-en-place/master/src/tile-wide.png)
 
-# <center>Mise-en-place</center>
+# Mise-en-place
 
 <p>
 <i>A boilerplate for front-end web apps.</i>
