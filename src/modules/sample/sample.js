@@ -3,7 +3,6 @@
  *
  * @author Author name
  */
-import $ from '../../../node_modules/jquery/dist/jquery.js';
 
 // Public API
 export default function () {

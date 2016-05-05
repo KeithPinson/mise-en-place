@@ -1,9 +1,10 @@
 /**
- * An example specification for the sample module
- * Loads the module and runs the test suite
- * Module path is relative to the current path
+ * An example specification for the sample module.
+ *
+ * Loads the module and runs the test suite.
+ *
+ * Note: Module path is relative to the current path
  */
-import $ from '../../../node_modules/jquery/dist/jquery.js';
 import Module from './sample.js';
 
 export default function () {
@@ -11,8 +12,8 @@ export default function () {
 
   var module = new Module();
 
-  // Test suite INIT
-  describe('INIT', function () {
+  // Test suite sample
+  describe('Sample', function () {
 
     it('is available', function () {
       expect(module).not.toBe(null);
