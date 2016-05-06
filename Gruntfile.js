@@ -1,5 +1,10 @@
 /**
- * General Grunt setup
+ * Grunt Setup -- file is broken out into separate files for each grunt
+ * task. These can be found in the grunt/ directory.
+ *
+ * Uses load-grunt-config, see https://github.com/firstandthird/load-grunt-config
+ * for details.
+ *
  */
 'use strict';
 
@@ -15,8 +20,13 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   /**
-   * Configuration: All data from package.json, grunt/options and
-   * grunt/plugins
+   * deepExtend will coerce all the
+   * following stuff into one structure:
+   *
+   *   package.json
+   *   grunt/options
+   *   grunt/plugins
+   *
    */
   var config = deepExtend({
       pkg: require('./package')
@@ -31,7 +41,9 @@ module.exports = function (grunt) {
   // Load all npm tasks through jit-grunt (all tasks from node_modules)
   require('jit-grunt')(grunt);
 
-  // Load your own tasks
+  /**
+   * Tasks unique to the project
+   */
   grunt.task.loadTasks('./grunt/tasks');
 
   /**

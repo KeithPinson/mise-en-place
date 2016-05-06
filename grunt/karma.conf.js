@@ -34,28 +34,72 @@ var getIncludeFiles = function () {
  * Exports as Karma configuration
  */
 module.exports = function (config) {
-  config.set({
-    basePath: '../',
+    config.set({
+        basePath: '../',
 
-    singleRun: true,
-    colors: true,
-    captureTimeout: 7000,
+        logLevel: config.LOG_INFO,
 
-    frameworks: ['jasmine'],
-    reporters: ['progress'],
+        autoWatch: false,
+        browsers: ['Chrome'],
+        singleRun: true,
+        concurrency: Infinity,
 
-    plugins: [
-      'karma-jasmine',
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-safari-launcher',
-      'karma-phantomjs-launcher'
-    ],
+        colors: true,
+        captureTimeout: 7000,
 
-    logLevel: config.LOG_INFO,
+        frameworks: ['mocha', 'sinon-chai', 'browserify'],
+        reporters: ['mocha', 'coverage'],
 
-    // List of files to load in the browser
-    files: getIncludeFiles()
-  });
+        plugins: [
+          'karma-mocha',
+          'karma-chrome-launcher',
+          'karma-firefox-launcher',
+          'karma-safari-launcher',
+          'karma-phantomjs-launcher'
+        ],
+
+
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {
+          'src/**/*.js': ['browserify'],
+          'test/**/*.spec.js': ['browserify']
+        },
+
+        // Browserify configuration
+        // The coverage command goes here instead of the preprocessor because we need it to work with browserify
+        browserify: {
+          debug: true,
+          transform: [
+              [
+                  'babelify',
+                  {
+                      presets: 'es2015'
+                  }
+              ], [
+                  'browserify-istanbul',
+                  {
+                      instrumenterConfig: {
+                          embedSource: true
+                      }
+                  }
+              ]
+          ]
+        },
+
+        // optionally, configure the reporter
+        // text displays it within the console (alternative: text-summary)
+        // lcov creates a codecov compatible report
+        coverageReporter: {
+          reporters: [
+              {'type': 'text'},
+              {'type': 'html', dir: 'coverage'},
+              {'type': 'lcov'}
+          ]
+        },
+
+        // List of files to load in the browser
+        files: getIncludeFiles()
+    });
 };
 

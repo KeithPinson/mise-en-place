@@ -3,15 +3,14 @@
 # Mise-en-place
 
 <p>
-<i>A boilerplate for front-end web apps.</i>
+<i>A boilerplate for front-end development.</i>
 </p>
 
-Web apps are a moving target. The state-of-art for building a Web app
+Web apps are a moving target. The state-of-art for building a web app
 from scratch is ever shifting. It's not that HTML, javascript, and CSS
 are changing with much swiftness, but the tools used with them; the
-frameworks, builders, and libraries; are constantly on the move and any
-effort it seems to stay current is as big a task as building the 
-app itself.
+frameworks, builders, and libraries; are constantly on the move and it seems,
+any effort to stay current is as big a task as building the app itself.
 
 In an effort to bring some sanity back to my infrequent forays into
 *from-scratch* Web apps, this project,
@@ -25,12 +24,13 @@ and make it your own.**
 ### Will Be Using:
 
    * Node.js
-   * Grunt (Other options, but will stick with Grunt for now)
+   * Grunt (Other good options, but will stick with this task-runner)
    * Angular
    * As much as possible, vanilla JS (avoiding jQuery)
    * Plain vanilla CSS
    * Karma
    * Git with no scaffolding tools
+   * And a bunch of other stuff, look in [package.json](https://raw.githubusercontent.com/KeithPinson/mise-en-place/master/package.json) for clues
    
 &nbsp;&nbsp;&nbsp; *(All subject to change.)*
         
