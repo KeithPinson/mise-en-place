@@ -4,6 +4,8 @@
  * @author Author name
  */
 
+/*global $:false */
+
 // Public API
 export default function () {
 

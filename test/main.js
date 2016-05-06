@@ -1,4 +1,5 @@
 // jshint camelcase: false
+/* jshint -W031 */
 
 // Include your specs here
 import ModuleSpec from '../src/modules/module/module.spec.js';

@@ -26,10 +26,11 @@ export default function () {
     it('fires event on init', function () {
       var eventCalled;
 
+/* TODO: rewrite in vanillaJS
       $(document).on(module.getEventName(), function () {
         eventCalled = true;
       });
-
+*/
       module.init();
 
       expect(eventCalled).toBeTruthy();
