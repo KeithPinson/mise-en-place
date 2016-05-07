@@ -24,15 +24,14 @@ module.exports = function (grunt) {
    * following stuff into one structure:
    *
    *   package.json
-   *   grunt/options
+   *   grunt/build-tasks
    *   grunt/plugins
    *
    */
   var config = deepExtend({
       pkg: require('./package')
     },
-    loadGruntConfig('grunt/options'),
-    loadGruntConfig('grunt/plugins')
+    loadGruntConfig('grunt/build-tasks')
   );
 
   // Load project configuration

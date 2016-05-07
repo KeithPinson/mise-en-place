@@ -4,29 +4,54 @@
     // http://www.jshint.com/docs/options/#enforcing-options
 
     "bitwise": true,
+    "camelcase": true,
+    "curly": true,
     "eqeqeq": true,
-    "forin": true,
+    "immed": true,
     "latedef": true,
+    "newcap": true,
     "noarg": true,
-    "nonbsp": true,
-    "nonew": true,
+    "strict": true,
+    "trailing": true,
     "undef": true,
     "unused": true,
+    "forin": true,
+    "nonbsp": true,
+    "nonew": true,
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     // Relaxing options
     // http://www.jshint.com/docs/options/#relaxing-options
 
+    "eqnull": true,
     "esnext": true,
-
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    "smarttabs": true,
 
     // Environments
     // http://www.jshint.com/docs/options/#environments
 
     "browser": true,
-    "jquery": true,
-    "node": true
+    "jquery": false,
+    "node": true,
 
+     // Globals
+     // See http://www.jshint.com/docs/
+    "globals": {
+        "ga": true,
+
+        // RequireJS
+        "define": true,
+        "module": true,
+        "require": true,
+        "requirejs": true,
+
+        // Mocha
+        "afterEach": false,
+        "beforeEach": false,
+        "describe": false,
+        "expect": false,
+        "it": false,
+        "before": false,
+        "sinon": true
+    }
 }

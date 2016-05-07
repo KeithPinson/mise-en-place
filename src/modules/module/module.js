@@ -1,30 +1,29 @@
 /**
  * An example module
- *
- * @author Author name
  */
 
-/*global $:false */
+import '../../../node_modules/bean/bean.min.js';
 
 // Public API
 export default function () {
 
-  // Strict mode to prevent sloppy JS
-  'use strict';
+    // Strict mode to prevent sloppy JS
+    'use strict';
 
-  // Private variables
-  let _eventName = '_test';
+    // Private variables
+    let _eventName = '_test';
 
-  return {
+    return {
 
-    // Getter for private variable
-    getEventName () {
-      return _eventName;
-    },
+        // Getter for private variable
+        getEventName () {
+            return _eventName;
+        },
 
-    // File an event on initialisation
-    init () {
-      $(document).trigger(_eventName);
-    }
-  };
+        // File an event on initialisation
+        init () {
+//            $(document).trigger(_eventName);
+//            bean.fire(document,_eventName);
+        }
+    };
 }
