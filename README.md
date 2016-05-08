@@ -38,7 +38,7 @@ Running:
 
     grunt build
     
-will create a distribution in a directory external to this project.
+will create a distribution in the *dist* folder.
     
         
 ## Before Starting
