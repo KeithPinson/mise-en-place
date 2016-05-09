@@ -16,104 +16,104 @@ var loadGruntConfig = require('./grunt/load-grunt-config');
  */
 module.exports = function (grunt) {
 
-  // Measure time of grunt tasks
-  require('time-grunt')(grunt);
+    // Measure time of grunt tasks
+    require('time-grunt')(grunt);
 
-  /**
-   * deepExtend will coerce all the
-   * following stuff into one structure:
-   *
-   *   package.json
-   *   grunt/build-tasks
-   *   grunt/plugins
-   *
-   */
-  var config = deepExtend({
-      pkg: require('./package')
-    },
-    loadGruntConfig('grunt/build-tasks')
-  );
+    /**
+     * deepExtend will coerce all the
+     * following stuff into one structure:
+     *
+     *   package.json
+     *   grunt/build-tasks
+     *   grunt/plugins
+     *
+     */
+    var config = deepExtend({
+            pkg: require('./package')
+        },
+        loadGruntConfig('grunt/build-tasks')
+    );
 
-  // Load project configuration
-  grunt.initConfig(config);
+    // Load project configuration
+    grunt.initConfig(config);
 
-  // Load all npm tasks through jit-grunt (all tasks from node_modules)
-  require('jit-grunt')(grunt);
+    // Load all npm tasks through jit-grunt (all tasks from node_modules)
+    require('jit-grunt')(grunt);
 
-  /**
-   * Tasks unique to the project
-   */
-  grunt.task.loadTasks('./grunt/tasks');
+    /**
+     * Tasks unique to the project
+     */
+    grunt.task.loadTasks('./grunt/tasks');
 
-  /**
-   * A task to generate pages
-   */
-  // Tasks for generating static pages
-  grunt.registerTask('pages:dev', [
-    'concat',
-    'replace:dev',
-    'clean:temp'
-  ]);
+    /**
+     * A task to generate pages
+     */
+    // Tasks for generating static pages
+    grunt.registerTask('pages:dev', [
+        'concat',
+        'replace:dev',
+        'clean:temp'
+    ]);
 
-  grunt.registerTask('pages:build', [
-    'concat',
-    'replace:build',
-    'clean:temp'
-  ]);
+    grunt.registerTask('pages:build', [
+        'concat',
+        'replace:build',
+        'clean:temp'
+    ]);
 
-  /**
-   * A task for development
-   */
-  grunt.registerTask('serve', ['connect:serve', 'watch']);
+    /**
+     * A task for development
+     */
+    grunt.registerTask('serve', ['connect:serve', 'watch']);
 
-  grunt.registerTask('dev', [
-    'jshint',
-    'jscs',
-    'pleeease:dev',
-    'copy',
-    'replace:htaccess',
-    'browserify:dev',
-    'pages:dev'
-  ]);
+    grunt.registerTask('dev', [
+        'jshint',
+        'jscs',
+        'pleeease:dev',
+        'copy',
+        'replace:htaccess',
+        'browserify:dev',
+        'pages:dev'
+    ]);
 
-  // Default task
-  grunt.registerTask('default', ['dev']);
+    // Default task
+    grunt.registerTask('default', ['dev']);
 
-  /**
-   * A task for building your pages
-   */
-  grunt.registerTask('build', [
-    'jshint',
-    'jscs',
-    'modernizr:build',
-    'pleeease:build',
-    'imagemin',
-    'copy',
-    'replace:htaccess',
-    'browserify:build',
-    'karma:unit',
-    'pages:build'
-  ]);
+    /**
+     * A task for building your pages
+     */
+    grunt.registerTask('build', [
+        'jshint',
+        'jscs',
+        'modernizr:build',
+        'pleeease:build',
+        'imagemin',
+        'copy',
+        'replace:htaccess',
+        'browserify:build',
+        'karma:unit',
+        'pages:build'
+    ]);
 
-  /**
-   * Testing
-   */
-  // A task for testing development code
-  grunt.registerTask('test', [
-    'browserify:test',
-    'karma:unit'
-  ]);
+    /**
+     * Testing
+     */
+    // A task for testing development code
+    grunt.registerTask('test', [
+        'browserify:test',
+        'karma:unit'
+    ]);
 
-  grunt.registerTask('test:all', [
-    'karma:all'
-  ]);
+    grunt.registerTask('test:all', [
+        'karma:all'
+    ]);
 
-  /**
-   * Travis CI task
-   */
-  grunt.registerTask('travis', [
-    'jshint',
-    'karma:travis'
-  ]);
+    /**
+     * Travis CI task
+     */
+    grunt.registerTask('travis', [
+        'jshint',
+        'karma:travis'
+    ]);
 
 };

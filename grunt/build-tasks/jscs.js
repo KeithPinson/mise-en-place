@@ -6,10 +6,10 @@
 var config = require('../config');
 
 module.exports = {
-  js: {
-    src: config.js.hintFiles,
-    options: {
-      config: '.jscsrc'
+    js: {
+        src: config.js.hintFiles,
+        options: {
+            config: '.jscsrc'
+        }
     }
-  }
 };

@@ -11,23 +11,23 @@ var projectConfig = require('./config');
  * @return {Array} Array of all files to include
  */
 var getIncludeFiles = function () {
-  var files = [];
+    var files = [];
 
-  // Add JavaScript libs
-  var filePatterns = projectConfig.js.libs;
+    // Add JavaScript libs
+    var filePatterns = projectConfig.js.libs;
 
-  // Add tests
-  filePatterns.push(projectConfig.js.test.dest);
+    // Add tests
+    filePatterns.push(projectConfig.js.test.dest);
 
-  // Iterate through files
-  filePatterns.forEach(function (element) {
-    files.push({
-      pattern: element,
-      included: true
+    // Iterate through files
+    filePatterns.forEach(function (element) {
+        files.push({
+            pattern: element,
+            included: true
+        });
     });
-  });
 
-  return files;
+    return files;
 };
 
 /**
@@ -51,51 +51,51 @@ module.exports = function (config) {
         reporters: ['mocha', 'coverage'],
 
         plugins: [
-          'karma-mocha',
-          'karma-chrome-launcher',
-          'karma-firefox-launcher',
-          'karma-safari-launcher',
-          'karma-phantomjs-launcher'
+            'karma-mocha',
+            'karma-chrome-launcher',
+            'karma-firefox-launcher',
+            'karma-safari-launcher',
+            'karma-phantomjs-launcher'
         ],
 
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-          'src/**/*.js': ['browserify'],
-          'test/**/*.spec.js': ['browserify']
+            'src/**/*.js': ['browserify'],
+            'test/**/*.spec.js': ['browserify']
         },
 
         // Browserify configuration
         // The coverage command goes here instead of the preprocessor because we need it to work with browserify
         browserify: {
-          debug: true,
-          transform: [
-              [
-                  'babelify',
-                  {
-                      presets: 'es2015'
-                  }
-              ], [
-                  'browserify-istanbul',
-                  {
-                      instrumenterConfig: {
-                          embedSource: true
-                      }
-                  }
-              ]
-          ]
+            debug: true,
+            transform: [
+                [
+                    'babelify',
+                    {
+                        presets: 'es2015'
+                    }
+                ], [
+                    'browserify-istanbul',
+                    {
+                        instrumenterConfig: {
+                            embedSource: true
+                        }
+                    }
+                ]
+            ]
         },
 
         // optionally, configure the reporter
         // text displays it within the console (alternative: text-summary)
         // lcov creates a codecov compatible report
         coverageReporter: {
-          reporters: [
-              {'type': 'text'},
-              {'type': 'html', dir: 'coverage'},
-              {'type': 'lcov'}
-          ]
+            reporters: [
+                {'type': 'text'},
+                {'type': 'html', dir: 'coverage'},
+                {'type': 'lcov'}
+            ]
         },
 
         // List of files to load in the browser

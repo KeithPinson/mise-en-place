@@ -5,16 +5,17 @@
 import ModuleSpec from '../src/modules/module/module.spec.js';
 
 (function () {
-  'use strict';
+    'use strict';
 
-  // Make async
-  window.__karma__.loaded = function () {};
+    // Make async
+    window.__karma__.loaded = function () {
+    };
 
-  // Set the flag for test environment
-  window.__test = true;
+    // Set the flag for test environment
+    window.__test = true;
 
-  // Execute new specs here
-  new ModuleSpec();
+    // Execute new specs here
+    new ModuleSpec();
 
-  window.__karma__.start();
+    window.__karma__.start();
 }());

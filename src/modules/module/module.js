@@ -2,7 +2,7 @@
  * An example module
  */
 
-import '../../../node_modules/bean/bean.min.js';
+import fire from '../../../node_modules/bean/bean.min.js';
 
 // Public API
 export default function () {
@@ -20,10 +20,10 @@ export default function () {
             return _eventName;
         },
 
-        // File an event on initialisation
+        // Fire an event on initialisation
         init () {
-//            $(document).trigger(_eventName);
-//            bean.fire(document,_eventName);
+            // //            $(document).trigger(_eventName);
+            fire(document,_eventName);
         }
     };
 }
