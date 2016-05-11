@@ -1,10 +1,9 @@
 /**
- * Grunt Setup -- file is broken out into separate files for each grunt
+ * Grunt Configuration -- file is broken out into separate files for each grunt
  * task. These can be found in the grunt/ directory.
  *
  * Uses load-grunt-config, see https://github.com/firstandthird/load-grunt-config
  * for details.
- *
  */
 'use strict';
 
