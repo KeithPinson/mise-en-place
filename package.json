@@ -66,6 +66,7 @@
     "mocha": "^2.4.5",
     "phantomjs": "^2.1.7",
     "pug": "^2.0.0-alpha6",
+    "rollup-plugin-babel": "^2.4.0",
     "rollupify": "^0.3.0",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",

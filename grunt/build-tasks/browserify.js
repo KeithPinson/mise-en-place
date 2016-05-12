@@ -1,5 +1,5 @@
 /**
- * Require JS configuration
+ * Browserify Grunt Configuration
  */
 'use strict';
 

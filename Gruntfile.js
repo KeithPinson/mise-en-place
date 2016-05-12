@@ -7,6 +7,7 @@
  */
 'use strict';
 
+// var babel = require('rollup-plugin-babel');
 var deepExtend = require('deep-extend');
 var loadGruntConfig = require('./grunt/load-grunt-config');
 
