@@ -72,7 +72,6 @@ module.exports = function (grunt) {
         'pleeease:dev',
         'copy',
         'replace:htaccess',
-        'browserify:dev',
         'pages:dev'
     ]);
 
@@ -90,7 +89,6 @@ module.exports = function (grunt) {
         'imagemin',
         'copy',
         'replace:htaccess',
-        'browserify:build',
         'karma:unit',
         'pages:build'
     ]);
@@ -100,7 +98,6 @@ module.exports = function (grunt) {
      */
     // A task for testing development code
     grunt.registerTask('test', [
-        'browserify:test',
         'karma:unit'
     ]);
 

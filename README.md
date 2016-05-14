@@ -46,7 +46,7 @@ will create a distribution in the *dist* folder.
    * Be sure to install Node.js, [https://nodejs.org](https://nodejs.org)
    * Run `npm update -g npm`
    * Install grunt: `npm install -g grunt-cli`
-   * Install browserify `npm install -g browserify`
+   * Install rollup `npm install -g rollup`
    * Using git make a clone of this project git, clone https:github.com/keithpinson/mise-en-place.git \<myproject\>
    * Run `npm install` to pull in the node modules 
 

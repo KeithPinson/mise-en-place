@@ -65,28 +65,7 @@ module.exports = function (config) {
             'src/**/*.js': ['browserify'],
             'test/**/*.spec.js': ['browserify']
         },
-
-        // Browserify configuration
-        // The coverage command goes here instead of the preprocessor because we need it to work with browserify
-        browserify: {
-            debug: true,
-            transform: [
-                [
-                    'babelify',
-                    {
-                        presets: 'es2015'
-                    }
-                ], [
-                    'browserify-istanbul',
-                    {
-                        instrumenterConfig: {
-                            embedSource: true
-                        }
-                    }
-                ]
-            ]
-        },
-
+        
         // optionally, configure the reporter
         // text displays it within the console (alternative: text-summary)
         // lcov creates a codecov compatible report
