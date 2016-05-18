@@ -76,7 +76,7 @@ module.exports = function (grunt) {
     ]);
 
     // Default task
-    grunt.registerTask('default', ['dev']);
+    grunt.registerTask('default', '\"grunt\" defaults to \"grunt dev\"', ['dev']);
 
     /**
      * A task for building your pages
