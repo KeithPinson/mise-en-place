@@ -47,7 +47,7 @@ module.exports = function (config) {
         colors: true,
         captureTimeout: 7000,
 
-        frameworks: ['mocha', 'sinon-chai', 'browserify'],
+        frameworks: ['mocha', 'sinon-chai'],
         reporters: ['mocha', 'coverage'],
 
         plugins: [
@@ -65,7 +65,7 @@ module.exports = function (config) {
             'src/**/*.js': ['browserify'],
             'test/**/*.spec.js': ['browserify']
         },
-        
+
         // optionally, configure the reporter
         // text displays it within the console (alternative: text-summary)
         // lcov creates a codecov compatible report

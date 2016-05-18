@@ -4,7 +4,7 @@
 'use strict';
 
 var config = require('../config');
-var babel = require('rollup-plugin-babel');
+var buble = require('rollup-plugin-buble');
 
 var devFiles = {};
 var buildFiles = {};
@@ -19,7 +19,7 @@ module.exports = {
         format: 'es6',
 
         plugins: [
-            babel({
+            buble({
                 presets: ['es2015-rollup'],
                 exclude: '/node_modules/**'
             })
