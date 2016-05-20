@@ -24,9 +24,7 @@ module.exports = {
                 exclude: '/node_modules/**'
             })
         ]
-    }
-
-/*    ,
+    },
 
     dev: {
 
@@ -39,7 +37,6 @@ module.exports = {
     test: {
 
     }
-*/
 };
 
 
