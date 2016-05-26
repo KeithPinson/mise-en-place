@@ -1,10 +1,14 @@
 /**
- * Default configuration for Karma
+ * Configuration for Karma
  */
 'use strict';
 
 // Get configuration of project to get correct files to include
 var projectConfig = require('./config');
+
+const buble = require('rollup-plugin-buble');
+const istanbul = require('rollup-plugin-istanbul');
+
 
 /**
  * Get all files to include in Karma tests
@@ -34,51 +38,79 @@ var getIncludeFiles = function () {
  * Exports as Karma configuration
  */
 module.exports = function (config) {
-    config.set({
+    const configuration = {
         basePath: '../',
 
+        // config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
         logLevel: config.LOG_INFO,
 
         autoWatch: false,
-        browsers: ['Chrome'],
-        singleRun: true,
-        concurrency: Infinity,
-
         colors: true,
-        captureTimeout: 7000,
 
-        frameworks: ['mocha', 'sinon-chai'],
+        frameworks: ['mocha', 'sinon-chai', 'sinon', 'chai'],
+
         reporters: ['mocha', 'coverage'],
 
-        plugins: [
-            'karma-mocha',
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-safari-launcher',
-            'karma-phantomjs-launcher'
-        ],
+        browsers: ['Chrome'],
+        browserDisconnectTimeout: 10000,
+        browserDisconnectTolerance: 2,
+        concurrency: 4,  // Max number of concurrent browsers (default: Infinity)
+        captureTimeout: 9000,
+        browserNoActivityTimeout: 30000,
 
+        exclude: [],
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'src/**/*.js': ['browserify'],
-            'test/**/*.spec.js': ['browserify']
+            'src/**/*.js': ['rollup'],
+            'test/**/*.spec.js': ['rollup']
+        },
+        rollupPreprocessor: {
+            rollup: {
+                plugins: [
+                    buble({
+                        exclude: 'node_modules/**'
+                    }),
+                    istanbul({
+                        exclude: ['test/**/*.js']
+                    })
+                ]
+            },
+            bundle: {
+                intro: '(function() {',
+                outro: '})();',
+                sourceMap: 'false'
+            }
         },
 
-        // optionally, configure the reporter
-        // text displays it within the console (alternative: text-summary)
-        // lcov creates a codecov compatible report
         coverageReporter: {
             reporters: [
-                {'type': 'text'},
-                {'type': 'html', dir: 'coverage'},
-                {'type': 'lcov'}
+                {type: 'text', dir: '../../coverage'},
+                {type: 'html', dir: '../../coverage'},
+                {type: 'lcov'}
             ]
         },
 
         // List of files to load in the browser
-        files: getIncludeFiles()
-    });
+        files: getIncludeFiles(),
+
+        customLaunchers: {
+            ChromeTravisCi: {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            }
+        }
+
+        // For CI set to true
+        // singleRun: true
+    };
+
+    if( process.env.TRAVIS ) {
+        // Used by Travis to push coveralls info corretly to example coveralls.io
+        configuration.reporters = ['mocha', 'coverage', 'coveralls'];
+    }
+
+    config.set(configuration);
 };
 
