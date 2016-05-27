@@ -44,7 +44,7 @@ module.exports = function (config) {
         // config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
         logLevel: config.LOG_INFO,
 
-        autoWatch: false,
+        autoWatch: false, // Trigger a test when a file changes
         colors: true,
 
         frameworks: ['mocha', 'sinon-chai', 'sinon', 'chai'],
@@ -100,10 +100,10 @@ module.exports = function (config) {
                 base: 'Chrome',
                 flags: ['--no-sandbox']
             }
-        }
+        },
 
         // For CI set to true
-        // singleRun: true
+        singleRun: true
     };
 
     if( process.env.TRAVIS ) {

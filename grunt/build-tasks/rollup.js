@@ -18,12 +18,21 @@ module.exports = {
     options: {
         format: 'es6',
 
+        plugins: function() {
+            return [
+                buble({
+                    exclude: './node_modules/**'
+                })
+            ];
+        }
+/*
         plugins: [
             buble({
                 presets: ['es2015-rollup'],
                 exclude: '/node_modules/**'
             })
         ]
+*/
     },
 
     dev: {
