@@ -36,7 +36,7 @@ module.exports = {
             dest: 'test/dist/test.js'
         },
         libs: [
-            'node_modules/grunt-modernizr/lib/modernizr-dev.js'
+//            'node_modules/grunt-modernizr/lib/modernizr-dev.js'
         ]
     },
 
