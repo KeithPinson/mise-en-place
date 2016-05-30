@@ -49,7 +49,13 @@ will create a distribution in the *dist* folder.
    * Install rollup: `npm install -g rollup`
    * Install bublé: `npm install -g buble`
    * Using git make a clone of this project git, clone https:github.com/keithpinson/mise-en-place.git \<myproject\>
-   * Run `npm install` to pull in the node modules 
+   * Run `npm install` to pull in the node modules
+    
+## Testing
+    
+Run test with Grunt:
+
+    grunt test
 
 ## License
 

@@ -47,15 +47,16 @@ module.exports = function (config) {
         autoWatch: false, // Trigger a test when a file changes
         colors: true,
 
-        frameworks: ['mocha', 'sinon-chai', 'sinon', 'chai'],
+        frameworks: ['sinon-chai', 'sinon', 'chai', 'mocha'],
 
         reporters: ['mocha', 'coverage'],
+
 
         browsers: ['Chrome'],
         browserDisconnectTimeout: 10000,
         browserDisconnectTolerance: 2,
         concurrency: 4,  // Max number of concurrent browsers (default: Infinity)
-        captureTimeout: 9000,
+        captureTimeout: 9000,   // Karma will attempt (3) times (default: 60000)
         browserNoActivityTimeout: 30000,
 
         exclude: [],

@@ -43,7 +43,7 @@
         "define": true,
         "module": true,
         "require": true,
-        "requirejs": true,
+        "requirejs": false,
 
         // Mocha
         "afterEach": false,
