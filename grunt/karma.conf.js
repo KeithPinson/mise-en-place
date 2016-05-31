@@ -47,9 +47,9 @@ module.exports = function (config) {
         autoWatch: false, // Trigger a test when a file changes
         colors: true,
 
-        frameworks: ['sinon-chai', 'sinon', 'chai', 'mocha'],
+        frameworks: ['sinon', 'chai', 'mocha'],
 
-        reporters: ['mocha', 'coverage'],
+        reporters: ['progress', 'mocha', 'coverage'],
 
 
         browsers: ['Chrome'],
