@@ -2,7 +2,7 @@
  * An example module
  */
 
-import fire from '../../../node_modules/bean/bean.min.js';
+import fire from '../../node_modules/bean/bean.min.js';
 
 // Public API
 export default function () {

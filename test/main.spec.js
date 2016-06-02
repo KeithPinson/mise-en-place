@@ -2,7 +2,7 @@
 /* jshint -W031 */
 
 // Include your specs here
-import ModuleSpec from '../src/modules/module/module.spec.js';
+import ModuleSpec from '/test/js/example/example.spec.js';
 
 (function () {
     'use strict';

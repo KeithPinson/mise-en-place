@@ -11,8 +11,7 @@ module.exports = {
     // JavaScript files
     js: {
         files: [
-            'src/js/**/*.js',
-            'src/modules/**/*.js'
+            'src/js/**/*.js'
         ],
 
         // All files that should be checked with JSHint
@@ -24,15 +23,15 @@ module.exports = {
         ],
 
         dev: {
-            entry: 'src/js/main.js',
+            entry: 'src/js/main.spec.js',
             dest: 'src/dist/index.js'
         },
         build: {
-            entry: 'src/js/main.js',
+            entry: 'src/js/main.spec.js',
             dest: 'dist/<%= pkg.version %>/main.min.js'
         },
         test: {
-            entry: 'test/main.js',
+            entry: 'test/main.spec.js',
             dest: 'test/dist/test.js'
         },
         libs: [
@@ -77,7 +76,7 @@ module.exports = {
 
     tests: {
         specs: [
-            'src/modules/**/*spec.js'
+            'test/js/**/*spec.js'
         ],
         coverage: 'test/coverage/'
     },

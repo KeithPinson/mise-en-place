@@ -5,14 +5,14 @@
  *
  * Note: Module path is relative to the current path
  */
-import Module from './module.js';
+import Module from '/src/js/example.js';
 
 export default function () {
     'use strict';
 
     var module = new Module();
 
-    // Test suite module
+    // Test suite example
     describe('Module', function () {
 
         it('is available', function () {
@@ -27,7 +27,7 @@ export default function () {
             var eventCalled;
 
             /* TODO: rewrite in vanillaJS
-             $(document).on(module.getEventName(), function () {
+             $(document).on(example.getEventName(), function () {
              eventCalled = true;
              });
              */
