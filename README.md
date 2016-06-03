@@ -14,7 +14,7 @@ any effort to stay current is as big a task as building the app itself.
 
 In an effort to bring some sanity back to my infrequent forays into
 *from-scratch* Web apps, this project,
-Mise-en-place (which means get everything in place before we start cooking),
+Mise-en-place (which means to get everything in place before we start cooking),
 serves as my moving target.
 It moves at its own pace&mdash;slower than the rest&mdash;but catching
 up to the state-of-art when it can. This is a &quot;*clone and never 
@@ -56,6 +56,42 @@ will create a distribution in the *dist* folder.
 Run test with Grunt:
 
     grunt test
+    
+## How Does All this Work?
+    
+Testing is central to our style of web development. We want a
+"separation of concerns" to influence the structure of our programs, their
+files, and the tests of those files. To do this we have to write modules, 
+bundle them into single files (html,js,css), test them, and then create a 
+distribution. All this bundling, transpiling, testing, etc. adds complexity
+to the project.
+
+At this time the complexity of the build is not simplified by the strength
+of the build tools. So, how does this all work? 
+
+Ideally, you shoud:
+
+   - Add your module
+   - Write the test for it 
+   - Hook the module into a page
+   - And, then run `grunt test`
+   
+If the configuration is broken the configuration files are a good place to
+start looking for a solution.
+
+<div style="background-color:#f0f0f0;margin-left:2em;margin-right:2em;padding:1em;">
+To get an understanding of what's going on here, peruse the following 
+configuration files:<br/>&nbsp;
+   
+   - <dl>package.json <br/><br/><dd>Contains the build dependencies. It is Node's <a src="http://gruntjs.com/configuring-tasks" title="NPM's package handling documentation">NPM</a> configuration file.</dd></dl>
+    
+   - <dl>Gruntfile.js <br/><br/><dd>Tells <a src="http://gruntjs.com/configuring-tasks" title="Grunt documentation">Grunt</a> what to build.</dd></dl>
+    
+   - <dl>rollup.config.js <br/><br/><dd><a src="http://rollupjs.org/guide" title="Rollup User's Guide">Rollup</a> bundles the module files into a single file.</dd></dl>
+   
+   - <dl>karma.conf.js <br/><br/><dd><a src="https://karma-runner.github.io/0.13/config/configuration-file.html" title="Karma's Configuration Document">Karma</a> is the test runner.</dd></dl>
+</div>   
+ 
 
 ## License
 
