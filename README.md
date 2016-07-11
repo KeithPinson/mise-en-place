@@ -48,7 +48,7 @@ will create a distribution in the *dist* folder.
    * Install grunt: `npm install -g grunt-cli`
    * Install rollup: `npm install -g rollup`
    * Install bublé: `npm install -g buble`
-   * Using git make a clone of this project git, clone https:github.com/keithpinson/mise-en-place.git \<myproject\>
+   * Using git, make a clone of this project git, clone https:github.com/keithpinson/mise-en-place.git \<myproject\>
    * Run `npm install` to pull in the node modules
     
 ## Testing
@@ -69,7 +69,7 @@ to the project.
 At this time the complexity of the build is not simplified by the strength
 of the build tools. So, how does this all work? 
 
-Ideally, you shoud:
+Ideally, you should:
 
    - Add your module
    - Write the test for it 
