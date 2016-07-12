@@ -25,11 +25,11 @@ and make it your own.**
 
    * Node.js
    * Grunt (Other good options, but will stick with this task-runner)
-   * Angular
-   * As much as possible, vanilla JS (avoiding jQuery)
+   * Angular2
+   * Typescript (files will be *.ts rather than *.js)
    * Plain vanilla CSS
    * Karma
-   * Git with no scaffolding tools
+   * Git rather than scaffolding tools
    * And a bunch of other stuff, look in [package.json](https://raw.githubusercontent.com/KeithPinson/mise-en-place/master/package.json) for clues
    
 &nbsp;&nbsp;&nbsp; *(All subject to change.)*
@@ -41,15 +41,21 @@ Running:
 will create a distribution in the *dist* folder.
     
         
-## Before Starting
+## To Get Started (very important)
 
-   * Be sure to install Node.js, [https://nodejs.org](https://nodejs.org)
-   * Run `npm update -g npm`
-   * Install grunt: `npm install -g grunt-cli`
-   * Install rollup: `npm install -g rollup`
-   * Install bublé: `npm install -g buble`
-   * Using git, make a clone of this project git, clone https:github.com/keithpinson/mise-en-place.git \<myproject\>
-   * Run `npm install` to pull in the node modules
+   1. Be sure to install Node.js, [https://nodejs.org](https://nodejs.org)
+   2. Run `npm update -g npm`
+   2. Install Typescript: `npm install -g typescript`
+   2. Install Angular2: `npm install angular`
+   2. Install grunt: `npm install -g grunt-cli`
+   2. Install rollup: `npm install -g rollup`
+   2. Install bublé: `npm install -g buble`
+   2. Using git, make a clone of this project git, clone https:github.com/keithpinson/mise-en-place.git \<myproject\>
+   2. Run `npm install` to pull in the node modules
+    
+   Npm being what it is, you will likely have a package that has a dependency
+   to an outdated package. In that case you may need to install that specific 
+   version of the dependent package.
     
 ## Testing
     
