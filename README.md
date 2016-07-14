@@ -46,7 +46,7 @@ will create a distribution in the *dist* folder.
    1. Be sure to install Node.js, [https://nodejs.org](https://nodejs.org)
    2. Run `npm update -g npm`
    2. Install Typescript: `npm install -g typescript`
-   2. Install Angular2: `npm install angular`
+   2. Install Angular2: <strike>`npm install angular2`</strike> See below. \*
    2. Install grunt: `npm install -g grunt-cli`
    2. Install rollup: `npm install -g rollup`
    2. Install bublé: `npm install -g buble`
@@ -56,6 +56,9 @@ will create a distribution in the *dist* folder.
    Npm being what it is, you will likely have a package that has a dependency
    to an outdated package. In that case you may need to install that specific 
    version of the dependent package.
+   
+   *\* Installing Angular2: for the time being cut-n-paste the angular packeges for
+   Angular2 into the package.json file from the [Angular Guide](https://angular.io/docs/ts/latest/guide/npm-packages.html)*
     
 ## Testing
     
