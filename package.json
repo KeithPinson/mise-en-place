@@ -34,7 +34,6 @@
       "systemjs": "0.19.27",
       "ts-helpers": "1.1.1",
       "tslint": "3.7.0-dev.2",
-      "typescript": "1.9.0-dev.20160409",
       "typings": "0.8.1",
       "zone.js": "0.6.12"
 
@@ -91,6 +90,7 @@
       "rollup-plugin-buble": "^0.8.0",
       "rollup-plugin-istanbul": "^1.0.0",
       "sinon": "^1.17.4",
-      "time-grunt": "1.2.2"
+      "time-grunt": "1.2.2",
+      "typescript": "1.9.0-dev.20160409"
   }
 }
