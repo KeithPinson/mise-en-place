@@ -1,4 +1,5 @@
 archive
+coverage
 node_modules
 dist
 test/coverage
