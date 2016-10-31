@@ -106,11 +106,11 @@ module.exports = function (grunt) {
     ]);
 
     /**
-     * Travis CI task
+     * CI task
      */
-    grunt.registerTask('travis', [
+    grunt.registerTask('ci', [
         'jshint',
-        'karma:travis'
+        'karma:jenkins'
     ]);
 
 };

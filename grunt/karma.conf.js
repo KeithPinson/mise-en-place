@@ -96,21 +96,9 @@ module.exports = function (config) {
         // List of files to load in the browser
         files: getIncludeFiles(),
 
-        customLaunchers: {
-            ChromeTravisCi: {
-                base: 'Chrome',
-                flags: ['--no-sandbox']
-            }
-        },
-
         // For CI set to true
         singleRun: true
     };
-
-    if( process.env.TRAVIS ) {
-        // Used by Travis to push coveralls info corretly to example coveralls.io
-        configuration.reporters = ['mocha', 'coverage', 'coveralls'];
-    }
 
     config.set(configuration);
 };

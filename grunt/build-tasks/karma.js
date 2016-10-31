@@ -24,12 +24,11 @@ module.exports = {
     }
   },
 
-  // Travis
-  travis: {
-    options: {
-
-      // Use Phantom and Firefox for Travis
-      browsers: ['PhantomJS', 'Firefox']
-    }
+  // Jenkins
+  jenkins: {
+    configFile: 'grunt/karma.conf.js',
+    singleRun: true,
+    runnerPort: 9999,
+    browsers: ['PhantomJS']
   }
 };
