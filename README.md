@@ -19,9 +19,10 @@ up to the state-of-art when it can. This is a &quot;*clone and never merge kind 
 - Node.js
 - Gulp
 - React
-- Jest
-- Yarn
-- Rollup
+- Karma, Mocha, Chai, Sinon
+- Yarn 2
+- Webpack
+- Tailwindcss
 
 ### Was Using:
 
@@ -30,7 +31,8 @@ up to the state-of-art when it can. This is a &quot;*clone and never merge kind 
    * Angular
    * As much as possible, vanilla JS (avoiding jQuery)
    * Plain vanilla CSS
-   * Karma
+   * Phantomjs
+   * Rollup
    * Git with no scaffolding tools
    * And a bunch of other stuff, look in [package.json](https://raw.githubusercontent.com/KeithPinson/mise-en-place/master/package.json) for clues
 
